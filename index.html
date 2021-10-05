@@ -27,14 +27,13 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/bubbleshoot.loader.js";
       const config = {
-        dataUrl: buildUrl + "/bubbleshoot.data.unityweb",
-        frameworkUrl: buildUrl + "/bubbleshoot.framework.js.unityweb",
-        codeUrl: buildUrl + "/bubbleshoot.wasm.unityweb",
-        symbolsUrl: buildUrl + "/bubbleshoot.symbols.json.unityweb",
+        dataUrl: buildUrl + "/bubbleshoot.data",
+        frameworkUrl: buildUrl + "/bubbleshoot.framework.js",
+        codeUrl: buildUrl + "/bubbleshoot.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "CandySmith",
         productName: "RaccoonRescue",
-        productVersion: "0.2",
+        productVersion: "1.0",
       };
 
       const container = document.querySelector("#unity-container");
@@ -64,7 +63,6 @@
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
       }
-      canvas.style.background = "url('" + buildUrl + "/bubbleshoot.jpg') center / cover";
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
