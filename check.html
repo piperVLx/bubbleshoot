@@ -12,11 +12,19 @@
 var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 function sendMessageToUnity(message) {
-    console.log("Method Called with "+message);
+   var val= GetAllURLparam();
+    console.log("Method Called with "+val);
       
-    UnityInAppBrowser.sendMessageFromJS(message);
+    UnityInAppBrowser.sendMessageFromJS(val);
     
 }
+
+function GetAllURLparam() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var sub = urlParams.get('sub');
+       return sub;
+       
+    }
 
 function appendIframeWithURL(url) {
 var iframe = document.createElement("IFRAME");
