@@ -9,19 +9,13 @@
   </head>
 
   <script>
-
+var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 function sendMessageToUnity(message) {
     console.log("Method Called with "+message);
-      if (isAndroid()){
-          console.log("yes is android");
+      
     UnityInAppBrowser.sendMessageFromJS(message);
-    }if (isIOS()) {
-    appendIframeWithURL('inappbrowserbridge://' + message);
-}
-    else{
-        alert("No Device Found! skip");
-    }
+    
 }
 
 function appendIframeWithURL(url) {
