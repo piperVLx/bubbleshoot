@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>UNITYBROWSERCHECK</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+
+  <script>
+
+var clickbtn = document.querySelector("#clickBtn")
+function sendMessageToUnity(message) {
+    if (isIOS()) {
+    appendIframeWithURL('inappbrowserbridge://' + message);
+} else if (isAndroid()){
+    UnityInAppBrowser.sendMessageFromJS(message);
+    }else{
+        alert("No Device Found! skip");
+    }
+}
+
+function appendIframeWithURL(url) {
+var iframe = document.createElement("IFRAME");
+ iframe.setAttribute("src", url);
+ document.documentElement.appendChild(iframe);
+ iframe.parentNode.removeChild(iframe);
+ iframe = null;
+}
+
+function isIOS() {
+if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+ return true;
+ } else {
+ return false;
+ }
+}
+
+function isAndroid() {
+return (/android/i.test(userAgent));
+}
+
+  </script>
+<body>
+<div id="clickBtn"></div>
+</body>
+</html>
