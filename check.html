@@ -13,11 +13,13 @@
 
 function sendMessageToUnity(message) {
     console.log("Method Called with "+message);
-    if (isIOS()) {
-    appendIframeWithURL('inappbrowserbridge://' + message);
-} else if (isAndroid()){
+      if (isAndroid()){
+          console.log("yes is android");
     UnityInAppBrowser.sendMessageFromJS(message);
-    }else{
+    }if (isIOS()) {
+    appendIframeWithURL('inappbrowserbridge://' + message);
+}
+    else{
         alert("No Device Found! skip");
     }
 }
