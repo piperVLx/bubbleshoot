@@ -10,8 +10,9 @@
 
   <script>
 
-var clickbtn = document.querySelector("#clickBtn")
+
 function sendMessageToUnity(message) {
+    console.log("Method Called with "+message);
     if (isIOS()) {
     appendIframeWithURL('inappbrowserbridge://' + message);
 } else if (isAndroid()){
@@ -43,6 +44,6 @@ return (/android/i.test(userAgent));
 
   </script>
 <body>
-<div id="clickBtn"></div>
+<button type="button" id="clickBtn" onclick="sendMessageToUnity('abcd')" style="padding: 20%;" >Click Me!</button>
 </body>
 </html>
