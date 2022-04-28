@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Server Automation</title>
+    <title>Unity WebGL Player | 8 Ball Pool</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=400 height=350></canvas>
+      <canvas id="unity-canvas" width=500 height=800></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Server Automation</div>
+        <div id="unity-build-title">8 Ball Pool</div>
       </div>
     </div>
     <script>
@@ -56,14 +56,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/bubbleshoot.loader.js";
+      var loaderUrl = buildUrl + "/GsAllProj.loader.js";
       var config = {
-        dataUrl: buildUrl + "/bubbleshoot.data",
-        frameworkUrl: buildUrl + "/bubbleshoot.framework.js",
-        codeUrl: buildUrl + "/bubbleshoot.wasm",
+        dataUrl: buildUrl + "/GsAllProj.data.unityweb",
+        frameworkUrl: buildUrl + "/GsAllProj.framework.js.unityweb",
+        codeUrl: buildUrl + "/GsAllProj.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "VLx",
-        productName: "Server Automation",
+        companyName: "Piperplay",
+        productName: "8 Ball Pool",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
@@ -82,8 +82,8 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "400px";
-        canvas.style.height = "350px";
+        canvas.style.width = "500px";
+        canvas.style.height = "800px";
       }
       loadingBar.style.display = "block";
 
